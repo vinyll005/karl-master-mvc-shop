@@ -39,19 +39,12 @@
                             <div class="col-12 col-lg-7">
                                 <div class="quickview_pro_des">
                                     <h4 class="title"><?php echo $product['name'];?></h4>
-                                    <!-- <div class="top_seller_product_rating mb-15">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div> -->
                                     <h5 class="price">$<?php echo $product['finalPrice'];?> <span>$<?php if($product['discount'] != 0) echo $product['price']; ?></span></h5>
                                     <p><?php echo $product['description']; ?></p>
-                                    <a href="#">View Full Product Details</a>
+                                    <a href="/shop/<?php echo $product['id']; ?>">View Full Product Details</a>
                                 </div>
                                 <!-- Add to Cart Form -->
-                                <form class="cart" method="post">
+                                <form class="cart cart-form" method="post">
                                     <div class="quantity">
                                         <!-- <span class="qty-minus"
                                             onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i
@@ -64,6 +57,7 @@
                                             onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i
                                                 class="fa fa-plus" aria-hidden="true"></i></span> -->
                                     </div>
+                                    <input type='hidden' class='productId' value='<?php echo $product['id']; ?>'>
                                     <button type="submit" name="addtocart" value="5" class="cart-submit">Add to
                                         cart</button>
                                     <!-- Wishlist -->
@@ -249,7 +243,12 @@
                             </div>
                             
                             <div class="product-description">
-                                <h4 class="product-price">$<?php echo $product['price']; ?></h4>
+                                <?php if(!empty($product['discount'])) { ?>
+                                <h4 class="product-price" style='text-decoration:line-through;'>$<?php echo $product['price']; ?></h4>
+                                <h4 class="product-price">$<?php echo $product['finalPrice']; ?></h4>
+                                <?php } else { ?>
+                                    <h4 class="product-price">$<?php echo $product['finalPrice']; ?></h4>
+                                <?php } ?>
                                 <p><?php echo $product['description']; ?></p>
                                 
                                 <!-- <a href="#" class="add-to-cart-btn">ADD TO CART</a> -->

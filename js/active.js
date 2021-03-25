@@ -437,9 +437,12 @@
         filter_data();
     });
 
-    // $('.item-pagination').click(function(){
-    //     e.preventDefault();
-    //     filter_data();
-    // });
+    $('.cart-form').submit(function(e)    {
+
+        e.preventDefault();
+
+        var productId = $(this).find('input:hidden').val();
+        console.log(productId);
+    });
 
 })(jQuery);

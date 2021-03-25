@@ -1,0 +1,16 @@
+"id","name","category","description","color","size","price","discount","finalPrice"
+"5","testName2","woman","alalallblablalala","blue","s","65","0","65"
+"6","testName","woman","alalallblablalala","blue","m","59","15","50"
+"7","Ivan","children","test","blue","xl","59","20","47"
+"8","Jumper in blue","man","ASOS DESIGN Van Gogh jacquard knit jumper in blue","blue","l","79","0","79"
+"9","Jumper in space","children","Knitted oversized jumper in space dye yarn","gray","s","35","5","33"
+"10","Jumper","man","Knitted oversized floral jumper in grey","gray","m","49","0","49"
+"11","Jumper","man","Knitted oversized jumper with carrot design in peach","red","l","59","0","59"
+"12","Trainers","children","Adidas Originals ZX 8000 trainers in pink","red","s","74","10","66"
+"13","Trainers","woman","Adidas Originals Rivalry Low trainers in off white","white","xs","49","0","49"
+"14","Jean","woman","High rise 'slouchy' mom jean in mushroom with knee rips","white","m","34","0","34"
+"15","Jeans","woman","Topshop split hem jeans in washed black","Black","m","55","0","55"
+"id","name","email","password","is_admin"
+"22","Kirill","levkirilll@yandex.ru","$2y$10$tNDdTK23uvXSxAzFXqis5eBaQy6LT6ISVgO6u/r4vsf9yvsuWuRJe","1"
+"24","user23","levkkk@yandex.ru","$2y$10$97xJB17R8B1XHKHhAg33L.XjifVhq7S9ImEaRqT6CfcTBqevBSZnC",NULL
+"25","user25","levkirilll111@yandex.ru","$2y$10$AEpSVn229DT/OtjD99esOu99g/2LN15DxpwSu3JH.87XUILmJ2EGq",NULL

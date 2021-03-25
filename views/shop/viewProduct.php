@@ -24,12 +24,12 @@
                 <div class="row">
                     <div class="col-12">
                         <ol class="breadcrumb d-flex align-items-center">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Dresses</a></li>
-                            <li class="breadcrumb-item active">Long Dress</li>
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/shop">Shop</a></li>
+                            <li class="breadcrumb-item active"><?php echo $product['name']; ?></li>
                         </ol>
                         <!-- btn -->
-                        <a href="#" class="backToHome d-block"><i class="fa fa-angle-double-left"></i> Back to Category</a>
+                        <a href="/shop" class="backToHome d-block"><i class="fa fa-angle-double-left"></i> Back to shop</a>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,12 @@
 
                             <h4 class="title"><a href="#">Long Yellow Dress</a></h4>
 
-                            <h4 class="price">$ 39.99</h4>
+                            <?php if(!empty($product['discount'])) { ?>
+                                <h4 class="price" style='text-decoration:line-through;'>$<?php echo $product['price']; ?></h4>
+                                <h4 class="price">$<?php echo $product['finalPrice']; ?></h4>
+                                <?php } else { ?>
+                                    <h4 class="price">$<?php echo $product['finalPrice']; ?></h4>
+                                <?php } ?>
 
                             <p class="available">Available: <span class="text-muted">In Stock</span></p>
 
@@ -78,23 +83,18 @@
                                 <h6 class="widget-title">Size</h6>
                                 <div class="widget-desc">
                                     <ul>
-                                        <li><a href="#">32</a></li>
-                                        <li><a href="#">34</a></li>
-                                        <li><a href="#">36</a></li>
-                                        <li><a href="#">38</a></li>
-                                        <li><a href="#">40</a></li>
-                                        <li><a href="#">42</a></li>
+                                        <li><a href="#"><?php echo mb_strtoupper($product['size']); ?></a></li>
                                     </ul>
                                 </div>
                             </div>
 
                             <!-- Add to Cart Form -->
                             <form class="cart clearfix mb-50 d-flex" method="post">
-                                <div class="quantity">
+                                <!-- <div class="quantity">
                                     <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
                                     <input type="number" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1">
                                     <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                </div>
+                                </div> -->
                                 <button type="submit" name="addtocart" value="5" class="btn cart-submit d-block">Add to cart</button>
                             </form>
 
@@ -108,9 +108,7 @@
 
                                     <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                                         <div class="card-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus.</p>
-                                            <p>Approx length 66cm/26" (Based on a UK size 8 sample) Mixed fibres</p>
-                                            <p>The Model wears a UK size 8/ EU size 36/ US size 4 and her height is 5'8"</p>
+                                            <p><?php echo $product['description']; ?></p>
                                         </div>
                                     </div>
                                 </div>
